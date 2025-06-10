@@ -7,6 +7,39 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Minecraft:wght@400&display=swap');
 
+        :root {
+            /* Dark Mode Colors */
+            --bg-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            --text-primary: #E0E0E0;
+            --header-bg: linear-gradient(45deg, #2C3E50, #34495E);
+            --header-border: #1B2631;
+            --header-text: #FFFFFF;
+            --header-subtitle: #BDC3C7;
+            --nav-bg: linear-gradient(45deg, #1e4d1e, #0f3a0f);
+            --nav-border: #0a2a0a;
+            --nav-hover: linear-gradient(45deg, #2e5d2e, #1f4a1f);
+            --content-bg: rgba(30, 30, 30, 0.95);
+            --content-border: #4a3428;
+            --content-heading: #D4AF37;
+            --heading-border: #6B5B3F;
+            --code-bg: #1a1a1a;
+            --code-border: #444;
+            --code-text: #00FF7F;
+            --feature-bg: linear-gradient(45deg, #B8860B, #DAA520);
+            --feature-border: #8B6914;
+            --feature-heading: #2F2F2F;
+            --feature-text: #1a1a1a;
+            --warning-bg: linear-gradient(45deg, #8B0000, #CD5C5C);
+            --warning-border: #660000;
+            --info-bg: linear-gradient(45deg, #191970, #4169E1);
+            --info-border: #0000AA;
+            --download-bg: linear-gradient(45deg, #8B008B, #9932CC);
+            --download-border: #660066;
+            --download-hover: linear-gradient(45deg, #9370DB, #8B008B);
+            --footer-bg: linear-gradient(45deg, #2F2F2F, #1a1a1a);
+            --footer-border: #000000;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -15,10 +48,11 @@
 
         body {
             font-family: 'Minecraft', monospace, Arial, sans-serif;
-            background: linear-gradient(135deg, #87CEEB 0%, #98FB98 100%);
+            background: var(--bg-gradient);
             min-height: 100vh;
-            color: #2F4F2F;
+            color: var(--text-primary);
             line-height: 1.6;
+            transition: all 0.3s ease;
         }
 
         .container {
@@ -27,25 +61,28 @@
             padding: 20px;
         }
 
+
+
         header {
-            background: linear-gradient(45deg, #8B4513, #A0522D);
-            border: 4px solid #654321;
+            background: var(--header-bg);
+            border: 4px solid var(--header-border);
             border-radius: 8px;
             padding: 30px;
             text-align: center;
             margin-bottom: 30px;
             box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
         }
 
         h1 {
-            color: #FFFFFF;
+            color: var(--header-text);
             font-size: 2.5em;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
             margin-bottom: 10px;
         }
 
         .subtitle {
-            color: #F5DEB3;
+            color: var(--header-subtitle);
             font-size: 1.2em;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
@@ -58,8 +95,8 @@
         }
 
         .nav-block {
-            background: linear-gradient(45deg, #32CD32, #228B22);
-            border: 3px solid #006400;
+            background: var(--nav-bg);
+            border: 3px solid var(--nav-border);
             border-radius: 6px;
             padding: 20px;
             text-align: center;
@@ -71,7 +108,7 @@
         .nav-block:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-            background: linear-gradient(45deg, #3CB371, #2E8B57);
+            background: var(--nav-hover);
         }
 
         .nav-block h3 {
@@ -87,32 +124,34 @@
         }
 
         .content-section {
-            background: rgba(255, 255, 255, 0.9);
-            border: 3px solid #8B4513;
+            background: var(--content-bg);
+            border: 3px solid var(--content-border);
             border-radius: 8px;
             padding: 30px;
             margin-bottom: 25px;
             box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
         }
 
         .content-section h2 {
-            color: #8B4513;
+            color: var(--content-heading);
             font-size: 1.8em;
             margin-bottom: 15px;
-            border-bottom: 2px solid #D2B48C;
+            border-bottom: 2px solid var(--heading-border);
             padding-bottom: 10px;
         }
 
         .code-block {
-            background: #2F2F2F;
-            border: 2px solid #555;
+            background: var(--code-bg);
+            border: 2px solid var(--code-border);
             border-radius: 4px;
             padding: 15px;
             margin: 15px 0;
-            color: #00FF00;
+            color: var(--code-text);
             font-family: 'Courier New', monospace;
             overflow-x: auto;
             box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
         }
 
         .feature-grid {
@@ -123,47 +162,50 @@
         }
 
         .feature-item {
-            background: linear-gradient(45deg, #FFD700, #FFA500);
-            border: 2px solid #FF8C00;
+            background: var(--feature-bg);
+            border: 2px solid var(--feature-border);
             border-radius: 6px;
             padding: 15px;
             text-align: center;
             box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
         }
 
         .feature-item h4 {
-            color: #8B4513;
+            color: var(--feature-heading);
             margin-bottom: 8px;
         }
 
         .feature-item p {
-            color: #654321;
+            color: var(--feature-text);
             font-size: 0.9em;
         }
 
         .warning-box {
-            background: linear-gradient(45deg, #FF6347, #FF4500);
-            border: 3px solid #DC143C;
+            background: var(--warning-bg);
+            border: 3px solid var(--warning-border);
             border-radius: 6px;
             padding: 15px;
             margin: 20px 0;
             color: white;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
         }
 
         .info-box {
-            background: linear-gradient(45deg, #4169E1, #1E90FF);
-            border: 3px solid #0000CD;
+            background: var(--info-bg);
+            border: 3px solid var(--info-border);
             border-radius: 6px;
             padding: 15px;
             margin: 20px 0;
             color: white;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
         }
 
         .download-btn {
-            background: linear-gradient(45deg, #FF1493, #DC143C);
-            border: 3px solid #B22222;
+            background: var(--download-bg);
+            border: 3px solid var(--download-border);
             border-radius: 8px;
             color: white;
             padding: 15px 30px;
@@ -181,18 +223,19 @@
         .download-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 12px rgba(0,0,0,0.4);
-            background: linear-gradient(45deg, #FF69B4, #FF1493);
+            background: var(--download-hover);
         }
 
         footer {
-            background: linear-gradient(45deg, #696969, #2F4F4F);
-            border: 3px solid #000000;
+            background: var(--footer-bg);
+            border: 3px solid var(--footer-border);
             border-radius: 8px;
             padding: 20px;
             text-align: center;
             color: white;
             margin-top: 30px;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
         }
 
         .pixelated {
@@ -213,6 +256,10 @@
             .nav-grid {
                 grid-template-columns: 1fr;
             }
+
+            .theme-toggle {
+                transform: scale(0.8);
+            }
         }
     </style>
 </head>
@@ -224,15 +271,15 @@
     </header>
 
     <div class="nav-grid">
-        <div class="nav-block" onclick="scrollTo('Configuration')">
+        <div class="nav-block" onclick="scrollToSection('Configuration')">
             <h3>⚙️ Configuration</h3>
             <p>Guide to install and configure the software.</p>
         </div>
-        <div class="nav-block" onclick="scrollTo('Api')">
+        <div class="nav-block" onclick="scrollToSection('Api')">
             <h3>📚 API Reference</h3>
             <p>Complete C# API documentation.</p>
         </div>
-        <div class="nav-block" onclick="scrollTo('Examples')">
+        <div class="nav-block" onclick="scrollToSection('Examples')">
             <h3>💡 Code Examples</h3>
             <p>Practical examples and code snippets.</p>
         </div>
@@ -258,7 +305,7 @@
         </div>
     </div>
 
-    <div class="content-section" id="api">
+    <div class="content-section" id="Api">
         <h2>📚 API Reference</h2>
         <p>The main classes and methods available in the software:</p>
 
@@ -286,7 +333,7 @@
         </div>
     </div>
 
-    <div class="content-section" id="esempi">
+    <div class="content-section" id="Examples">
 
         <h2>💡 Code Examples</h2>
         <h3>TODO</h3>
@@ -301,7 +348,8 @@
 </div>
 
 <script>
-    function scrollTo(elementId) {
+    // Smooth scrolling function
+    function scrollToSection(elementId) {
         document.getElementById(elementId).scrollIntoView({
             behavior: 'smooth'
         });
